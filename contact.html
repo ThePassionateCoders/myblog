@@ -20,13 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
- 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
-(function() {
-emailjs.init("user_30DJlHyZS3xjX3SMR3cZy");
-})();
-</script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
  
 <link rel="shortcut icon" type="image/png" href="/myfavicon.png">
 </head>
@@ -194,9 +188,15 @@ function validation(){
 function mailit(){
 	var text = validation()
 	if (text){
-		emailjs.sendForm("service_fi7djuk","template_i8eeo0g", "myform");
-                alert("Message Sent!");
-		return true;
+		Email.send({
+    SecureToken : "3f3ca408-fa89-4efc-a980-e3f42c1d9e09",
+    To : 'hammadalipbt18@gmail.com',
+    From : "thepassionatecoders@gmail.com",
+    Subject : "Test Email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+    }).then(
+        message => alert("mail sent successfully")
+    );
 	} else {
 	
 		return false;
