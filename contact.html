@@ -75,25 +75,25 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 
-<form id="myform">
+<form id="myform" onsubmit="sendEmail()">
   <div class="form-group">
     <label for="from_name">Name</label>
     <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Enter Your Name Here">
   </div>
   <div class="form-group">
     <label for="from_phone">Phone Number</label>
-    <input type="text" class="form-control" id="from_phone" name="from_phone" placeholder="Enter Your Phone Number Here">
+    <input type="number" class="form-control" id="from_phone" name="from_phone" placeholder="Enter Your Phone Number Here">
   </div>
   <div class="form-group">
     <label for="from_email">Email Address</label>
-    <input type="text" class="form-control" id="from_email" name="from_email" placeholder="Enter Your Email Address Here">
+    <input type="email" class="form-control" id="from_email" name="from_email" placeholder="Enter Your Email Address Here">
   </div>
   <div class="form-group">
     <label for="from_text">Enter Your Message Here</label>
     <textarea class="form-control" id="from_text" name="from_text" placeholder="Enter Your Message Here" rows="5"></textarea>
   </div>
 
-<button type="input" class="btn btn-primary my-3" onclick="sendEmail" id="sendMessageButton">Send
+<button type="input" class="btn btn-primary my-3" id="sendMessageButton">Send
 </button>   
          
 </form>
@@ -155,45 +155,20 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
 function sendEmail() {
-	Email.send({
-    SecureToken : "3f3ca408-fa89-4efc-a980-e3f42c1d9e09",
-    To : 'hammadalipbt18@gmail.com',
-    From : "thepassionatecoders@gmail.com",
-    Subject : "Test Email",
-    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
-    }).then(
-        message => alert("mail sent successfully")
-    );
-}
-
-function validation(){
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
 	var email = document.getElementById('from_email').value;
 	var message = document.getElementById('from_text').value;
 
-	if ( name.length < 3){
-	alert("Please Enter Your Correct Name");
-	return false;
-	} 
-	
-	if (phone.length != 10 || isNaN(phone)){
-		alert("Please Enter A Valid Ten Digit Number");
-		return false; 
-		}		
-							
-		
-	if(email.indexOf("@") == -1 || email.length < 6 || email.indexOf(".com") == -1 || email.indexOf(" ") >= 0) {
-	alert("Please Enter A Valid Email");
-	return false;
-	}
-	
-	if ( message.length < 50){
-	alert("Message must be of minimum 50 characters.");
-	return false;
-	} 
-	
-	sendEmail();
+	Email.send({
+    SecureToken : "3f3ca408-fa89-4efc-a980-e3f42c1d9e09",
+    To : "hammadalipbt18@gmail.com",
+    From : "thepassionatecoders@gmail.com",
+    Subject : name+" Contacted You From Blog",
+    Body : "Message : "+message+"<br>PhoneNumber : "+phone"<br>Email : "+email
+    }).then(
+        message => alert("mail sent successfully")
+    );
 }
 
 </script>
