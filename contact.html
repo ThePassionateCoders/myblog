@@ -76,7 +76,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 
-<form id="myform" onsubmit="mailit()">
+<form id="myform" onsubmit="sendEmail()">
   <div class="form-group">
     <label for="from_name">Name</label>
     <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Enter Your Name Here">
@@ -153,42 +153,9 @@
   <!-- Bootstrap core JavaScript -->
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script type="text/javascript">
-
-function validation(){
-	var name = document.getElementById('from_name').value;
-	var phone = document.getElementById('from_phone').value;
-	var email = document.getElementById('from_email').value;
-	var message = document.getElementById('from_text').value;
-
-	if ( name.length < 3){
-	alert("Please Enter Your Correct Name");
-	return false;
-	} 
-	
-	if (phone.length != 10 || isNaN(phone)){
-		alert("Please Enter A Valid Ten Digit Number");
-		return false; 
-		}		
-							
-		
-	if(email.indexOf("@") == -1 || email.length < 6 || email.indexOf(".com") == -1 || email.indexOf(" ") >= 0) {
-	alert("Please Enter A Valid Email");
-	return false;
-	}
-	
-	if ( message.length < 50){
-	alert("Message must be of minimum 50 characters.");
-	return false;
-	} 
-	
-	return true;
-}
-
-function mailit(){
-	var text = validation()
-	if (text){
-		Email.send({
+<script>
+function sendEmail() {
+	Email.send({
     SecureToken : "3f3ca408-fa89-4efc-a980-e3f42c1d9e09",
     To : 'hammadalipbt18@gmail.com',
     From : "thepassionatecoders@gmail.com",
@@ -197,12 +164,7 @@ function mailit(){
     }).then(
         message => alert("mail sent successfully")
     );
-	} else {
-	
-		return false;
-	}
 }
-
 </script>
 
 </body>
