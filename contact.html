@@ -169,9 +169,7 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
 	
-function Redirect() {
-               window.location = "https://www.thepassionatecoders.tk/contact.html";
-            }	
+
 function sendEmail() {
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
@@ -180,16 +178,17 @@ function sendEmail() {
 	var subject = name+" Contacted You From Website";
 	var mailBody = "Message : "+textmessage+"<html><br>Phone : </html>"+phone+"<html><br>Email : </html>"+email;
 	
+	
 	Email.send({
     SecureToken : "00b998eb-7500-4c2b-a5a0-0ee25f649bd7",
     To : "hammadalipbt18@gmail.com",
     From : "thepassionatecoders@gmail.com",
     Subject : subject,
-    Body : mailBody
+    Body : mailBody 
 }).then(
   message => alert("Message Sent Successfully!")
 );
-Redirect();
+
 }
 
 </script>
