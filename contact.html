@@ -22,6 +22,12 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
  
 <link rel="shortcut icon" type="image/png" href="/logo.png">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_4f05dRC2TObRXQpdWe51q");
+})();
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177197350-1"></script>
@@ -86,7 +92,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 
-<form id="myform" action="contact.html">
+<form id="myForm" action="contact.html">
   <div class="form-group">
     <label for="from_name">Name</label>
     <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Enter Your Name Here">
@@ -167,7 +173,8 @@
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
+<script type="text/javascript">
+/*
 function sendEmail() {
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
@@ -188,6 +195,8 @@ function sendEmail() {
 );
 
 }
+*/
+	emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', '#myForm')
 
 </script>
 
