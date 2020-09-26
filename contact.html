@@ -167,13 +167,14 @@ emailjs.init("user_4f05dRC2TObRXQpdWe51q");
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
-function sendEmail() {/*
+function sendEmail() {
 	
 	
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
 	var email = document.getElementById('from_email').value;
 	var textmessage = document.getElementById('from_text').value;
+	/*
 	var subject = name+" Contacted You From Website";
 	var mailBody = "Message : "+textmessage+"<html><br>Phone : </html>"+phone+"<html><br>Email : </html>"+email;
 	
@@ -188,7 +189,12 @@ function sendEmail() {/*
   message => alert("Message sent successfully!");
 );
 */
-emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', 'myForm');
+emailjs.send("service_yyrxzpl","template_zkk7zcq",{
+from_text: textmessage,
+from_email: email,
+from_phone: phone,
+from_name: name,
+});
 	
 
 
