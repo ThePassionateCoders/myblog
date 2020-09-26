@@ -168,10 +168,6 @@
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-	function Redirect() {	
-               window.location.assign("https://thepassionatecoders.tk");
-            }
-
 function sendEmail() {
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
@@ -188,7 +184,7 @@ function sendEmail() {
     Subject : subject,
     Body : mailBody 
 }).then(
-  message => Redirect();
+  message => alert("Message sent successfully!");
 );
 
 }
