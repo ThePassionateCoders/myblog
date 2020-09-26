@@ -92,7 +92,7 @@ emailjs.init("user_4f05dRC2TObRXQpdWe51q");
       <div class="col-lg-8 col-md-10 mx-auto">
         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
 
-<form id="myForm" onsubmit="sendEmail()" action="contact.html" >
+<form id="myForm" onsubmit="sendEmail()" >
   <div class="form-group">
     <label for="from_name">Name</label>
     <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Enter Your Name Here">
@@ -190,7 +190,7 @@ function sendEmail() {
 
 }
 */
-	emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', 'myForm')
+	emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', 'myForm'),
 
 </script>
 
