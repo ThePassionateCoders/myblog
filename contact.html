@@ -109,8 +109,8 @@ emailjs.init("user_4f05dRC2TObRXQpdWe51q");
     <label for="from_text">Enter Your Message Here</label>
     <textarea class="form-control" id="from_text" name="from_text" placeholder="Enter Your Message Here" rows="5"></textarea>
   </div>
-   <button type="submit" class="btn btn-primary my-3"  id="sendMessageButton" >Send</button>  
-</form>
+	<button type="submit" class="btn btn-primary my-3"  id="sendMessageButton">Send</button>
+</form>	       
   </div>
   </div>
    </div>
@@ -167,8 +167,8 @@ emailjs.init("user_4f05dRC2TObRXQpdWe51q");
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
-function sendEmail() {
-	/*
+function sendEmail() {/*
+	
 	
 	var name = document.getElementById('from_name').value;
 	var phone = document.getElementById('from_phone').value;
@@ -187,10 +187,12 @@ function sendEmail() {
 }).then(
   message => alert("Message sent successfully!");
 );
-
-}
 */
-	emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', 'myForm'),
+emailjs.sendForm('service_yyrxzpl', 'template_zkk7zcq', 'myForm'),
+}
+
+	
+
 
 </script>
 
