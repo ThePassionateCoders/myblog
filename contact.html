@@ -22,12 +22,6 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
  
 <link rel="shortcut icon" type="image/png" href="/logo.png">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
-(function() {
-emailjs.init("user_4f05dRC2TObRXQpdWe51q");
-})();
-</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177197350-1"></script>
@@ -165,45 +159,7 @@ emailjs.init("user_4f05dRC2TObRXQpdWe51q");
   <!-- Bootstrap core JavaScript -->
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script type="text/javascript">
-function sendEmail() {
-	
-	
-	var name = document.getElementById('from_name').value;
-	var phone = document.getElementById('from_phone').value;
-	var email = document.getElementById('from_email').value;
-	var textmessage = document.getElementById('from_text').value;
-	/*
-	var subject = name+" Contacted You From Website";
-	var mailBody = "Message : "+textmessage+"<html><br>Phone : </html>"+phone+"<html><br>Email : </html>"+email;
-	
-	
-	Email.send({
-    SecureToken : "00b998eb-7500-4c2b-a5a0-0ee25f649bd7",
-    To : "hammadalipbt18@gmail.com",
-    From : "thepassionatecoders@gmail.com",
-    Subject : subject,
-    Body : mailBody 
-}).then(
-  message => alert("Message sent successfully!");
-);
-*/
-emailjs.send("service_yyrxzpl","template_zkk7zcq",{
-from_text: textmessage,
-from_email: email,
-from_phone: phone,
-from_name: name,
-});
-	
-
-
-}
-
-	
-
-
-</script>
+  
 
 </body>
 
